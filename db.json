@@ -1,14 +1,14 @@
 {
-  "users": [
+  "wizkids": [
     {
       "id": 0,
       "name": "Robert",
-      "employeed": 1
+      "employed": 1
     },
     {
       "id": 1,
       "name": "Sloboz",
-      "employeed": 1
+      "employed": 1
     }
   ]
 }

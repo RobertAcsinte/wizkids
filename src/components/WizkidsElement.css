@@ -1,0 +1,84 @@
+@import '../colors.css';
+
+
+
+
+
+.wizkid-element-container {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  height: 120px;
+  margin: 20px;
+  background-color: var(--card-background-color);
+  border-radius: 10px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+}
+
+.wizkid-element-avatar-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.wizkid-element-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.wizkid-element-info-container {
+  flex: 1.5;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.wizkid-element-name {
+  margin: 0px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.wizkid-element-position {
+  margin: 0px;
+  padding-top: 4px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.wizkid-element-employed {
+  padding: 5px;
+  border-style: solid;
+  border-radius: 20px;
+  border-width: 2px;
+  border-color: var(--employed-color);
+  color: var(--employed-color);
+  font-size: 12px;
+  font-weight: 500;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.wizkid-element-edit-icon-container {
+  display: inline-block;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: var(--owow-green);
+  border-radius: 50px;
+  padding: 1px 3px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+}
+
+.wizkid-element-edit-icon {
+  width: 30px;
+  height: 30px;
+}
+
