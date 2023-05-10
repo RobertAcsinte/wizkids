@@ -1,0 +1,28 @@
+a {
+  color: white;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 40px 200px;
+  background-color: black;
+  color: white;
+}
+
+.company-logo-navbar {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.login-text-navbar {
+  font-weight: 300;
+  font-size: 24px;
+}
+
