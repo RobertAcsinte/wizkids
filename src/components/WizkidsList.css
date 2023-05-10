@@ -1,20 +1,24 @@
 @import '../colors.css';
 
 .wizkids-list-container {
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 2px;
-  row-gap: 2px; */
-
-
-
-
-  /* max-width: 800px;
   display: grid;
-  gap: 10px */
 }
 
-.grid-element {
-  background-color: var(--background-color);
-
+.center-wizkids-grid {
+  display: flex;
+  justify-content: center;
 }
+
+
+@media (min-width: 695px) {
+  .wizkids-list-container { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1035px) {
+  .wizkids-list-container { grid-template-columns: repeat(3, 1fr); }
+}
+
+
+
+
+

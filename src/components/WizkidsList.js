@@ -5,7 +5,42 @@ function WizkidsList() {
   return (
     <div className='wizkids-list-container'>
       
-      <WizkidsElement />
+      <div className='center-wizkids-grid'>
+        <WizkidsElement />
+      </div>
+      <div className='center-wizkids-grid'>
+        <WizkidsElement />
+      </div>
+      <div className='center-wizkids-grid'>
+        <WizkidsElement />
+      </div>
+      <div className='center-wizkids-grid'>
+        <WizkidsElement />
+      </div>
+      <div className='center-wizkids-grid'>
+        <WizkidsElement />
+      </div>
+      <div className='center-wizkids-grid'>
+        <WizkidsElement />
+      </div>
+      <div className='center-wizkids-grid'>
+        <WizkidsElement />
+      </div>
+      <div className='center-wizkids-grid'>
+        <WizkidsElement />
+      </div>
+      <div className='center-wizkids-grid'>
+        <WizkidsElement />
+      </div>
+      <div className='center-wizkids-grid'>
+        <WizkidsElement />
+      </div>
+      <div className='center-wizkids-grid'>
+        <WizkidsElement />
+      </div>
+      <div className='center-wizkids-grid'>
+        <WizkidsElement />
+      </div>
 
 
     </div>
