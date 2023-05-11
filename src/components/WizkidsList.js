@@ -2,6 +2,7 @@ import './WizkidsList.css';
 import WizkidsElement from './WizkidsElement';
 import { useContext } from 'react';
 import WizkidsContext from "../context/wizkids";
+import { Link } from 'react-router-dom';
 
 function WizkidsList() {
 
@@ -10,6 +11,7 @@ function WizkidsList() {
   const renderedWizkids = wizkids.map((wizkid) => {
     return (
       <div className='center-wizkids-grid' key={wizkid.id}>
+        
         <WizkidsElement wizkid={wizkid}/>
       </div>
     )

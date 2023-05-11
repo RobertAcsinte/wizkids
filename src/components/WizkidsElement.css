@@ -1,9 +1,6 @@
 @import '../colors.css';
 
 
-
-
-
 .wizkid-element-container {
   display: flex;
   flex-direction: row;
@@ -14,6 +11,7 @@
   background-color: var(--card-background-color);
   border-radius: 10px;
   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+  color: black;
 }
 
 .wizkid-element-avatar-container {
