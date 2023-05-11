@@ -2,13 +2,27 @@
   "wizkids": [
     {
       "id": 0,
-      "name": "Robert",
+      "name": "Oricum Nu Intelegi",
+      "position": "CEO",
       "employed": 1
     },
     {
       "id": 1,
-      "name": "Sloboz",
+      "name": "Ce Am",
+      "position": "Developer",
       "employed": 1
+    },
+    {
+      "id": 2,
+      "name": "Scris Aici",
+      "position": "Designer",
+      "employed": 0
+    },
+    {
+      "id": 3,
+      "name": "Sloboz Pula",
+      "position": "Intern",
+      "employed": 0
     }
   ]
 }
