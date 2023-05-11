@@ -19,6 +19,14 @@
   .wizkids-list-container { grid-template-columns: repeat(3, 1fr); }
 }
 
+@media (min-width: 1700px) {
+  .wizkids-list-container { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 2200px) {
+  .wizkids-list-container { grid-template-columns: repeat(5, 1fr); }
+}
+
 
 
 

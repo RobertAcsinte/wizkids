@@ -1,62 +1,6 @@
 {
   "wizkids": [
     {
-      "id": 0,
-      "name": "Wīgaberhtaz Giotto",
-      "position": "CEO",
-      "employed": 1,
-      "phone": "06 925 425 245",
-      "email": "robert@owow.io"
-    },
-    {
-      "id": 1,
-      "name": "Mahesh Zaman",
-      "position": "Developer",
-      "employed": 1,
-      "phone": "06 925 425 245",
-      "email": "robert@owow.io"
-    },
-    {
-      "id": 2,
-      "name": "Pythios Ramesh",
-      "position": "Designer",
-      "employed": 0,
-      "phone": "06 925 425 245",
-      "email": "robert@owow.io"
-    },
-    {
-      "id": 3,
-      "name": "Mahdi Jón",
-      "position": "Intern",
-      "employed": 0,
-      "phone": "06 925 425 245",
-      "email": "robert@owow.io"
-    },
-    {
-      "id": 4,
-      "name": "Kire Idris",
-      "position": "CEO",
-      "employed": 1,
-      "phone": "06 925 425 245",
-      "email": "robert@owow.io"
-    },
-    {
-      "id": 5,
-      "name": "Laurits Rəşad",
-      "position": "Developer",
-      "employed": 1,
-      "phone": "06 925 425 245",
-      "email": "robert@owow.io"
-    },
-    {
-      "id": 6,
-      "name": "Severi Viljam",
-      "position": "Designer",
-      "employed": 0,
-      "phone": "06 925 425 245",
-      "email": "robert@owow.io"
-    },
-    {
       "id": 7,
       "name": "Mihangel Sarava",
       "position": "Intern",
