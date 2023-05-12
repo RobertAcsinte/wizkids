@@ -22,7 +22,7 @@ function Provider({children}) {
       } finally {
         setLoading(false);
       }
-    }, 1500);
+    }, 1000);
 
 
   }

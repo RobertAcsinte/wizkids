@@ -12,8 +12,6 @@ function WizkidsList() {
   const renderedWizkids = wizkids.map((wizkid) => {
     return (
       <div className='center-wizkids-grid' key={wizkid.id}>
-        <div>
-        </div>
         <WizkidsElement wizkid={wizkid}/>
       </div>
     )
