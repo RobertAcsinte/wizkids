@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from 'react';
 import WizkidsContext from "../context/wizkids";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import WizkidElementContainer from "../components/WizkidElementContainer";
 
 
 function WizkidEdit() {
@@ -28,22 +29,15 @@ function WizkidEdit() {
   return (
     <div>
       <Navbar />
-      <div className="wizkid-edit-container-center">
-      <div className="wizkid-edit-container">
-        <div className="wizkid-edit-avatar-container">
-          <img className="wizkid-edit-avatar" src={require('../images/person.jpg')}/>
-        </div>
-
-
-        <form className="wizkid-edit-form" onSubmit={handleSubmit}>
+      <WizkidElementContainer>
+      <form className="wizkid-edit-form" onSubmit={handleSubmit}>
           <label className="label-form">Name</label>
           <input value={name} className="input-form" onChange={handleChange}/>
           <button className="wizkid-edit-button-edit">
               Save
           </button>
         </form>
-      </div>
-      </div>
+      </WizkidElementContainer>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import "./WizkidDetails.css"
 import { useContext, useState } from 'react';
 import WizkidsContext from "../context/wizkids";
 import { Link } from "react-router-dom";
+import WizkidElementContainer from "../components/WizkidElementContainer";
 
 
 function WizkidDetails() {
@@ -19,11 +20,7 @@ function WizkidDetails() {
   return (
     <div>
       <Navbar />
-      <div className="wizkid-details-container-center">
-      <div className="wizkid-details-container">
-        <div className="wizkid-details-avatar-container">
-          <img className="wizkid-details-avatar" src={require('../images/person.jpg')}/>
-        </div>
+      <WizkidElementContainer>
         <p className="wizkid-details-name">{found.name}</p>
         <p className="wizkid-details-position">{found.position}</p>
         <p className="wizkid-details-phone-email">{found.phone}</p>
@@ -31,8 +28,7 @@ function WizkidDetails() {
         <Link to={`/edit/${found.id}`}>
           <button className="wizkid-details-button-edit">Edit</button>
         </Link>
-      </div>
-      </div>
+      </WizkidElementContainer>
     </div>
   );
 }
