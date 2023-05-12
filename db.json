@@ -2,15 +2,12 @@
   "wizkids": [
     {
       "name": "Sevan Giottoef",
+      "position": "Developer",
       "id": 11
     },
     {
-      "id": 14,
-      "name": "Toros Abd al-Rahim",
-      "position": "Designer",
-      "employed": 0,
-      "phone": "06 925 425 245",
-      "email": "robert@owow.io"
+      "name": "Toros Abd al",
+      "id": 14
     }
   ]
 }

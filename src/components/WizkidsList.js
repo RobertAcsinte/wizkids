@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import WizkidsContext from "../context/wizkids";
 import { Link } from 'react-router-dom';
 import { SyncLoader } from 'react-spinners';
+import LoadingContainer from './LoadingContainer';
 
 function WizkidsList() {
 
@@ -19,11 +20,7 @@ function WizkidsList() {
 
 
   if(loading) {
-    return (
-      <div className='wizkids-list-container-error-loading'>
-        <SyncLoader color="var(--owow-green)" size="80px" />
-      </div>
-    );
+    return <LoadingContainer />
   }
 
   if(error != "") {
@@ -34,6 +31,7 @@ function WizkidsList() {
     );
   }
 
+  console.log(renderedWizkids)
   return (
     <div className='wizkids-list-container'>
       {renderedWizkids}
