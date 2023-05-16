@@ -5,10 +5,12 @@ import "./App.css"
 import { Routes, Route } from 'react-router-dom';
 import WizkidDetails from "./pages/WizkidDetails";
 import WizkidEdit from "./pages/WizkidEdit";
+import Login from "./pages/Login";
+import { useState } from "react";
 
 function App() {
 
-  const {fetchWizkids} = useContext(WizkidsContext);
+  const {fetchWizkids, token} = useContext(WizkidsContext);
   
   useEffect(() => {
     fetchWizkids();
@@ -20,6 +22,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/details/:id" element={<WizkidDetails />} />
         <Route path="/edit/:id" element={<WizkidEdit />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
 

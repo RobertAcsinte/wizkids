@@ -12,5 +12,11 @@
       "employed": 1,
       "id": 14
     }
-  ]
+  ],
+
+  "auth":  {
+      "token": "test123"
+    }
+
 }
+
