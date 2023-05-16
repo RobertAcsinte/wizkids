@@ -3,24 +3,17 @@
     {
       "name": "Sevan Giotto",
       "position": "Developer",
-      "employed": 0,
-      "id": 1,
-      "email": "ham@ham.com",
-      "phone": "06234542"
+      "employed": false,
+      "id": 1
     },
     {
-      "name": "fsdfsgffffffaab",
+      "name": "fsdfsgffffffaabgfdad",
       "position": "CEO",
-      "employed": 1,
-      "id": 14,
-      "email": "ham@ham.com",
-      "phone": "06234542"
+      "employed": true,
+      "id": 14
     }
   ],
-
-  "auth":  {
-      "token": "test123"
-    }
-
+  "auth": {
+    "token": "test123"
+  }
 }
-

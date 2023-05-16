@@ -85,6 +85,25 @@ const editWizkidById = async (id, newName) => {
   }
 };
 
+const setEmployementWizkidById = async (id) => {
+  try {
+    const updatedWizkids = await Promise.all(wizkids.map(async (wizkid) => {
+      if(wizkid.id === Number(id)) {
+        const response = await axios.put(`http://localhost:3001/wizkids/${id}`, {
+          name: wizkid.name,
+          position: wizkid.position,
+          employed: !(wizkid.employed),
+      });
+          return { ...wizkid, ...response.data};
+      }
+      return wizkid;
+  }));
+  setWizkids(updatedWizkids);
+  } catch(error) {
+      throw error;
+  }
+};
+
   const valueToShare = {
     token: token,
     login: login,
@@ -93,7 +112,8 @@ const editWizkidById = async (id, newName) => {
     wizkids: wizkids,
     fetchWizkids: fetchWizkids,
     deleteWizkidById: deleteWizkidById,
-    editWizkidById: editWizkidById
+    editWizkidById: editWizkidById,
+    setEmployementWizkidById: setEmployementWizkidById
   };
 
   return <WizkidsContext.Provider value={valueToShare}>
