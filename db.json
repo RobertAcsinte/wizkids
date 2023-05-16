@@ -4,13 +4,17 @@
       "name": "Sevan Giotto",
       "position": "Developer",
       "employed": 0,
-      "id": 1
+      "id": 1,
+      "email": "ham@ham.com",
+      "phone": "06234542"
     },
     {
       "name": "fsdfsgffffffaab",
       "position": "CEO",
       "employed": 1,
-      "id": 14
+      "id": 14,
+      "email": "ham@ham.com",
+      "phone": "06234542"
     }
   ],
 
