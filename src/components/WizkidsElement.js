@@ -23,10 +23,7 @@ function WizkidsElement({wizkid}) {
     borderColor: wizkid.employed ? "var(--employed-color)" : "var(--unemployed-color)"
   };
 
-  
-
-  return (
-   
+  return ( 
     <div className="wizkid-element-container" onClick={handleDetailsClick}>
       <div className="wizkid-element-avatar-container">
         <img className="wizkid-element-avatar" src={require('../images/person.jpg')}/>

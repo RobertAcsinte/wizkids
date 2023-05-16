@@ -1,12 +1,15 @@
 {
   "wizkids": [
     {
-      "name": "Sevan Giottoef",
+      "name": "Sevan Giotto",
       "position": "Developer",
-      "id": 11
+      "employed": 0,
+      "id": 1
     },
     {
-      "name": "Toros Abd al",
+      "name": "fsdfsgffffffaab",
+      "position": "CEO",
+      "employed": 1,
       "id": 14
     }
   ]

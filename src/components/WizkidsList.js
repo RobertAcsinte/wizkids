@@ -31,7 +31,6 @@ function WizkidsList() {
     );
   }
 
-  console.log(renderedWizkids)
   return (
     <div className='wizkids-list-container'>
       {renderedWizkids}
