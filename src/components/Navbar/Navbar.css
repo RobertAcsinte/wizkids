@@ -1,5 +1,7 @@
+@import '../../colors.css';
+
 a {
-  color: white;
+  color: gray;
   text-decoration: none;
 }
 
@@ -11,19 +13,37 @@ nav {
   top: 0;
   right: 0;
   left: 0;
-  padding: 20px 200px;
-  background-color: black;
-  color: white;
+  padding: 20px 15%;
+  background-color: var(--owow-green);
   z-index: 999;
 }
 
 .company-logo-navbar {
-  font-weight: 700;
+  color: black;
+  font-weight: 900;
   font-size: 32px;
 }
 
 .login-text-navbar {
+  color: black;
   font-weight: 300;
   font-size: 24px;
 }
+
+.login-text-navbar:hover {
+  color: gray;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 350px) {
+  nav {
+    flex-direction: column;
+  }
+
+  .login-text-navbar {
+    margin-top: 20px;
+  }
+}
+
+
 
