@@ -5,12 +5,12 @@ import { useContext } from 'react';
 
 function Navbar() {
   let navigate = useNavigate();
-  const {token, logout} = useContext(AuthContext);
+  const {isLoggedIn, logout} = useContext(AuthContext);
 
-  const accountText = token ? "Logout" : "Login";
+  const accountText = isLoggedIn ? "Logout" : "Login";
 
   const handleAccount = () => {
-    if(token) {
+    if(isLoggedIn) {
       logout();
     }
     else {
