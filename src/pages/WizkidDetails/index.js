@@ -1,11 +1,11 @@
 import { useParams } from "react-router";
-import Navbar from "../components/Navbar";
+import Navbar from "../../components/Navbar";
 import "./WizkidDetails.css"
 import { useContext, useState } from 'react';
-import WizkidsContext from "../context/wizkids";
+import WizkidsContext from "../../context/wizkidsContext";
 import { Link } from "react-router-dom";
-import WizkidElementContainer from "../components/WizkidElementContainer";
-import LoadingContainer from "../components/LoadingContainer";
+import WizkidElementContainer from "../../components/WizkidElementContainer";
+import LoadingContainer from "../../components/LoadingContainer";
 
 
 function WizkidDetails() {

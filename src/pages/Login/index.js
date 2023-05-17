@@ -1,23 +1,24 @@
 import './Login.css';
 import { useContext, useEffect, useState } from 'react';
-import WizkidsContext from "../context/wizkids";
+import AuthContext from '../../context/authContext';
 import { useNavigate } from 'react-router';
-import LoadingContainer from '../components/LoadingContainer';
-import ErrorContainer from '../components/ErrorContainer';
+import LoadingContainer from '../../components/LoadingContainer';
+import ErrorContainer from '../../components/ErrorContainer';
+
 
 export default function Login() {
 
-  const {login, loading, error, token} = useContext(WizkidsContext);
+  const {login, loading, error, isLoggedIn} = useContext(AuthContext);
 
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if(token) {
+    if(isLoggedIn) {
       navigate(-1);
     } 
-  }, [loading]);
+  }, [isLoggedIn]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

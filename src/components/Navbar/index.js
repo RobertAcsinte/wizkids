@@ -1,11 +1,11 @@
 import './Navbar.css';
 import { useNavigate } from "react-router-dom";
-import WizkidsContext from "../context/wizkids";
+import AuthContext from "../../context/authContext";
 import { useContext } from 'react';
 
 function Navbar() {
   let navigate = useNavigate();
-  const {token, logout} = useContext(WizkidsContext);
+  const {token, logout} = useContext(AuthContext);
 
   const accountText = token ? "Logout" : "Login";
 

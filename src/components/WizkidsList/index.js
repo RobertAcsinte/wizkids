@@ -1,10 +1,10 @@
 import './WizkidsList.css';
-import WizkidsElement from './WizkidsElement';
+import WizkidsElement from '../WizkidsElement';
 import { useContext } from 'react';
-import WizkidsContext from "../context/wizkids";
+import WizkidsContext from "../../context/wizkidsContext";
 import { Link } from 'react-router-dom';
 import { SyncLoader } from 'react-spinners';
-import LoadingContainer from './LoadingContainer';
+import LoadingContainer from '../LoadingContainer';
 
 function WizkidsList() {
 

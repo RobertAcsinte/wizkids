@@ -1,5 +1,5 @@
-import Navbar from "../components/Navbar";
-import WizkidsList from "../components/WizkidsList";
+import Navbar from "../../components/Navbar";
+import WizkidsList from "../../components/WizkidsList";
 import "./Home.css"
 
 
