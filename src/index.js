@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { Provider } from './context/wizkids';
+import { Provider } from './context/wizkidsContext';
+import { ProviderContextAuth } from './context/authContext';
 import { BrowserRouter } from 'react-router-dom';
 
 
@@ -12,9 +13,11 @@ const root = ReactDOM.createRoot(el);
 root.render(
 
   <BrowserRouter>
-    <Provider>
-      <App />
-    </Provider> 
+    <ProviderContextAuth>
+      <Provider>
+        <App />
+      </Provider> 
+    </ProviderContextAuth>
   </BrowserRouter>
 
 );

@@ -1,4 +1,4 @@
-@import '../colors.css';
+@import '../../colors.css';
 
 .wizkids-list-container-error-loading {
   display: flex;

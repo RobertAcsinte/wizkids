@@ -1,7 +1,7 @@
 import "./WizkidsElement.css"
 import { Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
-import WizkidsContext from "../context/wizkids";
+import WizkidsContext from "../../context/wizkidsContext";
 import { useNavigate } from "react-router-dom";
 
 function WizkidsElement({wizkid}) {
@@ -26,7 +26,7 @@ function WizkidsElement({wizkid}) {
   return ( 
     <div className="wizkid-element-container" onClick={handleDetailsClick}>
       <div className="wizkid-element-avatar-container">
-        <img className="wizkid-element-avatar" src={require('../images/person.jpg')}/>
+        <img className="wizkid-element-avatar" src={require('../../images/person.jpg')}/>
       </div>
       <div className="wizkid-element-info-container">
         <div className="wizkid-element-edit-icon-container" onClick={handleDeleteClick}>
