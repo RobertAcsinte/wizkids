@@ -6,7 +6,7 @@ import useToken from "../hooks/useToken";
 const WizkidsContext = createContext();
 
 function Provider({children}) {
-  const {token, setToken} = useToken();
+  const {token, setToken, removeToken} = useToken();
   const [wizkids, setWizkids] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -39,6 +39,10 @@ function Provider({children}) {
           setLoading(false);
         }
       }, 1000);
+    };
+
+    const logout = () => {
+      removeToken();
     };
   
   
@@ -107,6 +111,7 @@ const setEmployementWizkidById = async (id) => {
   const valueToShare = {
     token: token,
     login: login,
+    logout: logout,
     error: error,
     loading: loading,
     wizkids: wizkids,

@@ -59,13 +59,13 @@ const employmentButtonText = employed ? "Fire!" : "Hire back!";
       <Navbar />
       {found !== undefined && (
         <WizkidElementContainer>
-        <form className="wizkid-edit-form" onSubmit={handleSubmitEditName}>
-            <label className="label-form">Name</label>
-            <input value={name} className="input-form" onChange={handleChange}/>
-            <button className="wizkid-edit-button-edit">
-                Save
-            </button>
-            {error && <p style={{color: "red", fontWeight: "bold"}}>{error}</p>}
+          <form className="wizkid-edit-form" onSubmit={handleSubmitEditName}>
+              <label className="label-form">Name</label>
+              <input value={name} className="input-form" onChange={handleChange}/>
+              <button className="wizkid-edit-button-edit">
+                  Save
+              </button>
+              {error && <p style={{color: "red", fontWeight: "bold"}}>{error}</p>}
           </form>
           {token && (
             <button className="wizkid-edit-button-set-employement" onClick={handleSubmitChangeEmployement}>

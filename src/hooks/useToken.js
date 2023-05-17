@@ -13,7 +13,13 @@ export default function useToken() {
     setToken(userToken.token);
   };
 
+  const removeToken = () => {
+    localStorage.removeItem("authToken");
+    setToken(undefined);
+  };
+
   return {
+    removeToken: removeToken,
     setToken: saveToken,
     token
   }

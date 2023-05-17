@@ -13,8 +13,6 @@ export default function Login() {
   const [password, setPassword] = useState();
   const navigate = useNavigate();
 
-  console.log(loading);
-
   useEffect(() => {
     if(token) {
       navigate(-1);
