@@ -3,18 +3,14 @@
     {
       "name": "Sevan Giotto",
       "position": "Developer",
-      "employed": 0,
-      "id": 1,
-      "email": "dfs@dsgdfs.com",
-      "phone": "0642525524"
+      "employed": true,
+      "id": 1
     },
     {
-      "name": "fsdfsgffffffaab",
+      "name": "fsdfsgffffffapula",
       "position": "CEO",
-      "employed": 1,
-      "id": 14,
-      "email": "dfs@dsgdfs.com",
-      "phone": "0642525524"
+      "employed": false,
+      "id": 14
     }
   ],
   "auth": {

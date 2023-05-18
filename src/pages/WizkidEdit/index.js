@@ -8,11 +8,13 @@ import { useNavigate } from "react-router-dom";
 import WizkidElementContainer from "../../components/WizkidElementContainer";
 import LoadingContainer from "../../components/LoadingContainer";
 import InputLabel from "../../components/InputLabel";
+import AuthContext from "../../context/authContext";
 
 
 function WizkidEdit() {
   const { id } = useParams(); //get the id from url
-  const {wizkids, loading, editWizkidById, setEmployementWizkidById, token} = useContext(WizkidsContext);
+  const {wizkids, loading, editWizkidById, setEmployementWizkidById} = useContext(WizkidsContext);
+  const {token} = useContext(AuthContext);
   const [name, setName] = useState("");
   const [employed, setEmployed] = useState();
   const [error, setError] = useState("");
@@ -58,16 +60,15 @@ const employmentButtonText = employed ? "Fire!" : "Hire back!";
   return (
     <div>
       <Navbar />
-      
       {found !== undefined && (
         <WizkidElementContainer>
-          <div className="wizkid-edit-form" onSubmit={handleSubmitEditName}>
+          <form className="wizkid-edit-form" onSubmit={handleSubmitEditName}>
               <InputLabel labelName = "Name" value={name} onChange={handleChange} />
               <button className="wizkid-edit-button-edit">
                   Save
               </button>
               {error && <p style={{color: "red", fontWeight: "bold"}}>{error}</p>}
-          </div>
+          </form>
           {token && (
             <button className="wizkid-edit-button-set-employement" onClick={handleSubmitChangeEmployement}>
               {employmentButtonText}
