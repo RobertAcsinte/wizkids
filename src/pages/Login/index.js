@@ -4,6 +4,8 @@ import AuthContext from '../../context/authContext';
 import { useNavigate } from 'react-router';
 import LoadingContainer from '../../components/LoadingContainer';
 import ErrorContainer from '../../components/ErrorContainer';
+import Navbar from '../../components/Navbar';
+import InputLabel from '../../components/InputLabel';
 
 
 export default function Login() {
@@ -30,23 +32,19 @@ export default function Login() {
   }
 
   return(
+    <div className='center-cont'>
+      <div className='login-title'>OWOW</div>
     <div className="login-wrapper">
-      <h1>Please Log In</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <p>Username</p>
-          <input type="text" onChange={e => setUserName(e.target.value)}/>
-        </label>
-        <label>
-          <p>Password</p>
-          <input type="password" onChange={e => setPassword(e.target.value)}/>
-        </label>
-        <div>
-          <button type="submit">Submit</button>
-          {error && <p style={{color: "red", fontWeight: "bold"}}>{error}</p>}
-        </div>
+      <h1>Login</h1>
+      <form className='form-login' onSubmit={handleSubmit}>
+        <InputLabel labelName={"Username"} type="text" onChange={e => setUserName(e.target.value)} />
+        <InputLabel labelName={"Password"} type="password" onChange={e => setPassword(e.target.value)} />
+        <button type="submit" className='submit-login'>Submit</button>
+        {error && <p style={{color: "red", fontWeight: "bold"}}>{error}</p>}
       </form>
     </div>
+    </div>
+
   )
 }
 

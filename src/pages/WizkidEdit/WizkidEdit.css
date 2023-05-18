@@ -1,39 +1,3 @@
-body {
-  padding-top: 100px;
-}
-
-.wizkid-edit-container-center {
-  display: flex;
-  justify-content: center;
-  padding-top: 50px;
-}
-
-.wizkid-edit-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(251, 251, 251);
-  width: 500px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
-}
-
-
-.wizkid-edit-avatar-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 25px;
-}
-
-.wizkid-edit-avatar {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: contain;
-}
 
 .wizkid-edit-form {
   display: flex;
@@ -41,23 +5,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-}
-
-.label-form {
-  font-size: 20px;
-  font-weight: 300;
-  margin: 10px 0px;
-}
-
-.input-form {
-  border-style: none;
-  border-color: var(--employed-color);
-  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
-  padding: 5px;
-  font-size: 20px;
-  text-align: center;
-  font-weight: 500;
-  border-radius: 15px;
+  width: 50%;
 }
 
 .wizkid-edit-button-edit {
@@ -79,4 +27,10 @@ body {
   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
   margin-bottom: 24px;
   margin-top: 24px;
+}
+
+@media only screen and (max-width: 750px) {
+  .wizkid-edit-form {
+    width: 90%;
+  }
 }

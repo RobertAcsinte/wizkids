@@ -1,6 +1,4 @@
 
-
-
 function ErrorContainer({children}) {
   return (
     <div className='wizkids-list-container-error-loading'>
