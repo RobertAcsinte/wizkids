@@ -8,10 +8,18 @@ const WizkidsContext = createContext();
 function Provider({children}) {
   
   const [wizkids, setWizkids] = useState([]);
+  const [filteredWizkids, setFilteredWizkids] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  console.log(filteredWizkids);
   
+  const searchWizkids = (query) => {
+    setFilteredWizkids(wizkids.filter((item) =>
+      item.name.toLowerCase().includes(query.toLowerCase())
+    ));
+  }
+
   //delay to simulate real api call
   const fetchWizkids = () => {
     setLoading(true);
@@ -81,7 +89,9 @@ const setEmployementWizkidById = async (id) => {
     fetchWizkids: fetchWizkids,
     deleteWizkidById: deleteWizkidById,
     editWizkidById: editWizkidById,
-    setEmployementWizkidById: setEmployementWizkidById
+    setEmployementWizkidById: setEmployementWizkidById,
+    filteredWizkids: filteredWizkids,
+    searchWizkids: searchWizkids
   };
 
   return <WizkidsContext.Provider value={valueToShare}>

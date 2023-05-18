@@ -8,9 +8,17 @@ import LoadingContainer from '../LoadingContainer';
 
 function WizkidsList() {
 
-  const {wizkids, loading, error} = useContext(WizkidsContext);
+  const {wizkids, filteredWizkids, loading, error} = useContext(WizkidsContext);
 
-  const renderedWizkids = wizkids.map((wizkid) => {
+  let wizkidsToShow = [];
+  if(filteredWizkids.length > 0) {
+    wizkidsToShow = filteredWizkids;
+  }
+  else {
+    wizkidsToShow = wizkids;
+  }
+
+  const renderedWizkids = wizkidsToShow.map((wizkid) => {
     return (
       <div className='center-wizkids-grid' key={wizkid.id}>
         <WizkidsElement wizkid={wizkid}/>
