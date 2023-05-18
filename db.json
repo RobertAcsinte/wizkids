@@ -1,16 +1,20 @@
 {
   "wizkids": [
     {
-      "name": "Sevan Giottof",
+      "name": "Sevan Giotto",
       "position": "Developer",
-      "employed": false,
-      "id": 1
+      "employed": 0,
+      "id": 1,
+      "email": "dfs@dsgdfs.com",
+      "phone": "0642525524"
     },
     {
-      "name": "fsdfsgffffffaabgfdad",
+      "name": "fsdfsgffffffaab",
       "position": "CEO",
-      "employed": true,
-      "id": 14
+      "employed": 1,
+      "id": 14,
+      "email": "dfs@dsgdfs.com",
+      "phone": "0642525524"
     }
   ],
   "auth": {

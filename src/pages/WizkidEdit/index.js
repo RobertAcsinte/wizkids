@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import WizkidElementContainer from "../../components/WizkidElementContainer";
 import LoadingContainer from "../../components/LoadingContainer";
+import InputLabel from "../../components/InputLabel";
 
 
 function WizkidEdit() {
@@ -57,16 +58,16 @@ const employmentButtonText = employed ? "Fire!" : "Hire back!";
   return (
     <div>
       <Navbar />
+      
       {found !== undefined && (
         <WizkidElementContainer>
-          <form className="wizkid-edit-form" onSubmit={handleSubmitEditName}>
-              <label className="label-form">Name</label>
-              <input value={name} className="input-form" onChange={handleChange}/>
+          <div className="wizkid-edit-form" onSubmit={handleSubmitEditName}>
+              <InputLabel labelName = "Name" value={name} onChange={handleChange} />
               <button className="wizkid-edit-button-edit">
                   Save
               </button>
               {error && <p style={{color: "red", fontWeight: "bold"}}>{error}</p>}
-          </form>
+          </div>
           {token && (
             <button className="wizkid-edit-button-set-employement" onClick={handleSubmitChangeEmployement}>
               {employmentButtonText}

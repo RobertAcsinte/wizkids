@@ -1,5 +1,51 @@
+@import '../../colors.css';
+
+.center-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.login-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 72px;
+  font-weight: 700;
+  padding-bottom: 36px;
+  padding-top: 50px;
+}
+
 .login-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  height: 80%;
+  margin: 0px 0;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.submit-login {
+  border: none;
+  margin-top: 15px;
+  padding: 15px 0px;
+  background-color: var(--owow-green);
+  border-radius: 15px;
+}
+
+@media only screen and (max-width: 400px) {
+  .center-cont {
+    top: 25px
+  }
 }
