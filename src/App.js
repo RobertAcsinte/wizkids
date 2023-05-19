@@ -9,7 +9,6 @@ import WizkidDetails from "./pages/WizkidDetails";
 import WizkidEdit from "./pages/WizkidEdit";
 import Login from "./pages/Login";
 import { useState } from "react";
-import Test from "./pages/Test";
 
 function App() {
 

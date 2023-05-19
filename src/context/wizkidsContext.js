@@ -117,14 +117,13 @@ const setEmployementWizkidById = async (id) => {
     deleteWizkidById: deleteWizkidById,
     editWizkidById: editWizkidById,
     setEmployementWizkidById: setEmployementWizkidById,
-
     filteredWizkids: filteredWizkids,
     searchWizkids: searchWizkids,
     fetchedPositions: fetchedPositions,
-
     setFilteredPosition: setFilteredPosition,
-
     filteredPosition: filteredPosition,
+    searchQuery: searchQuery,
+    setSearchQuery: setSearchQuery
   };
 
   return <WizkidsContext.Provider value={valueToShare}>

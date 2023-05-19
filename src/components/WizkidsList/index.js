@@ -9,7 +9,6 @@ import LoadingContainer from '../LoadingContainer';
 function WizkidsList() {
 
   const {wizkids, filteredWizkids , loading, error} = useContext(WizkidsContext);
-
   let wizkidsToShow = [];
 
   if(loading) {
@@ -24,16 +23,6 @@ function WizkidsList() {
     return <div>Nothing found</div>
   }
 
-  // let wizkidsToShow = positionWizkids;
-
-
-  // if(filteredWizkids.length > 0) {
-  //   wizkidsToShow = filteredWizkids;
-  // }
-  // else {
-  //   wizkidsToShow = wizkids;
-  // }
-
   const renderedWizkids = wizkidsToShow.map((wizkid) => {
     return (
       <div className='center-wizkids-grid' key={wizkid.id}>
@@ -41,7 +30,6 @@ function WizkidsList() {
       </div>
     )
   });
-
 
   if(error != "") {
     return (

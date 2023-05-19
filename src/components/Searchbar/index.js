@@ -3,16 +3,15 @@ import { useState, useContext } from "react";
 import WizkidsContext from "../../context/wizkidsContext";
 
 function Searchbar() {
-  const {searchWizkids} = useContext(WizkidsContext);
-  const [searchQuery, setSearchQuery] = useState("");
+  const {searchWizkids, searchQuery, setSearchQuery} = useContext(WizkidsContext);
 
   const searchQueryHandler = (e) => {
-    // setSearchQuery(e.target.value);
+    setSearchQuery(e.target.value);
     searchWizkids(e.target.value);
   };
 
   return (
-    <input type="text" onChange={searchQueryHandler}>
+    <input type="text" value={searchQuery} onChange={searchQueryHandler}>
     </input>
   );
 };
