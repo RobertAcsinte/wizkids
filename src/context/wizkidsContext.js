@@ -16,7 +16,6 @@ function Provider({children}) {
   const [filteredWizkids, setFilteredWizkids] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
-
   useEffect(() => {
     setFilteredWizkids(wizkids);
   }, [wizkids]);
@@ -25,15 +24,19 @@ function Provider({children}) {
     searchWizkids(searchQuery);
   }, [filteredPosition])
 
-  const searchWizkids = (query) => {
-    setSearchQuery(query);
+  useEffect(() => {
+    searchWizkids(searchQuery);
+  }, [searchQuery])
+
+  const searchWizkids = () => {
+    console.log(searchQuery)
     if(filteredPosition === "All") {
       setFilteredWizkids(wizkids.filter((item) =>
-      item.name.toLowerCase().includes(query.toLowerCase())
+      item.name.toLowerCase().includes(searchQuery.toLowerCase())
     ));
     } else{
       setFilteredWizkids(wizkids.filter((item) =>
-      item.name.toLowerCase().includes(query.toLowerCase()) && item.position.toLowerCase().includes(filteredPosition.toLowerCase())
+      item.name.toLowerCase().includes(searchQuery.toLowerCase()) && item.position.toLowerCase().includes(filteredPosition.toLowerCase())
     ));
     }
   }

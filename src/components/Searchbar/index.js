@@ -7,7 +7,6 @@ function Searchbar() {
 
   const searchQueryHandler = (e) => {
     setSearchQuery(e.target.value);
-    searchWizkids(e.target.value);
   };
 
   return (
