@@ -2,6 +2,7 @@ import Navbar from "../../components/Navbar";
 import WizkidsList from "../../components/WizkidsList";
 import "./Home.css";
 import Searchbar from "../../components/Searchbar";
+import FilterDropdown from "../../components/FilterDropdown";
 
 
 function Home() {
@@ -10,6 +11,7 @@ function Home() {
     <div>
       <Navbar />
       <Searchbar />
+      <FilterDropdown />
       <WizkidsList />
     </div>
   );

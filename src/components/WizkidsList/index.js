@@ -1,6 +1,6 @@
 import './WizkidsList.css';
 import WizkidsElement from '../WizkidsElement';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import WizkidsContext from "../../context/wizkidsContext";
 import { Link } from 'react-router-dom';
 import { SyncLoader } from 'react-spinners';
@@ -8,15 +8,31 @@ import LoadingContainer from '../LoadingContainer';
 
 function WizkidsList() {
 
-  const {wizkids, filteredWizkids, loading, error} = useContext(WizkidsContext);
+  const {wizkids, filteredWizkids , loading, error} = useContext(WizkidsContext);
 
   let wizkidsToShow = [];
+
+  if(loading) {
+    return <LoadingContainer />
+  }
+
   if(filteredWizkids.length > 0) {
     wizkidsToShow = filteredWizkids;
   }
-  else {
-    wizkidsToShow = wizkids;
+  //just so it won't show nothing found for a split of a second until load is changing in context to fetch data from api
+  else if(wizkids.length > 0) {
+    return <div>Nothing found</div>
   }
+
+  // let wizkidsToShow = positionWizkids;
+
+
+  // if(filteredWizkids.length > 0) {
+  //   wizkidsToShow = filteredWizkids;
+  // }
+  // else {
+  //   wizkidsToShow = wizkids;
+  // }
 
   const renderedWizkids = wizkidsToShow.map((wizkid) => {
     return (
@@ -26,10 +42,6 @@ function WizkidsList() {
     )
   });
 
-
-  if(loading) {
-    return <LoadingContainer />
-  }
 
   if(error != "") {
     return (

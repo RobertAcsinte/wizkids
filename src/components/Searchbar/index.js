@@ -11,8 +11,6 @@ function Searchbar() {
     searchWizkids(e.target.value);
   };
 
-  console.log(searchQuery);
-
   return (
     <input type="text" onChange={searchQueryHandler}>
     </input>

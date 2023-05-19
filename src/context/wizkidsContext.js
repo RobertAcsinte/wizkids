@@ -1,4 +1,4 @@
-import { createContext, useState, useCallback } from "react";
+import { createContext, useState, useCallback, useEffect } from "react";
 import axios from "axios";
 
 
@@ -8,25 +8,52 @@ const WizkidsContext = createContext();
 function Provider({children}) {
   
   const [wizkids, setWizkids] = useState([]);
-  const [filteredWizkids, setFilteredWizkids] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  console.log(filteredWizkids);
-  
+  const [fetchedPositions, setFetchPositions] = useState([]); //show the available positions for the dropdown fiter
+  const [filteredPosition, setFilteredPosition] = useState("All");
+  const [filteredWizkids, setFilteredWizkids] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+
+
+  useEffect(() => {
+    setFilteredWizkids(wizkids);
+  }, [wizkids]);
+
+  useEffect(() => {
+    searchWizkids(searchQuery);
+  }, [filteredPosition])
+
   const searchWizkids = (query) => {
-    setFilteredWizkids(wizkids.filter((item) =>
+    setSearchQuery(query);
+    if(filteredPosition === "All") {
+      setFilteredWizkids(wizkids.filter((item) =>
       item.name.toLowerCase().includes(query.toLowerCase())
     ));
+    } else{
+      setFilteredWizkids(wizkids.filter((item) =>
+      item.name.toLowerCase().includes(query.toLowerCase()) && item.position.toLowerCase().includes(filteredPosition.toLowerCase())
+    ));
+    }
   }
 
   //delay to simulate real api call
   const fetchWizkids = () => {
+    setFetchPositions([]);
     setLoading(true);
     setTimeout(async () => {
       try {
         const response = await axios.get("http://localhost:3001/wizkids");
         setWizkids(response.data);
+        //get positions
+        let tempArray = ["All"];
+        response.data.forEach(element => {
+          if(!(tempArray.includes(element.position))) {
+            tempArray.push(element.position)
+          }
+        });
+        setFetchPositions(tempArray);
         setError("");
       } catch(error) {
         setError(error.message);
@@ -90,8 +117,14 @@ const setEmployementWizkidById = async (id) => {
     deleteWizkidById: deleteWizkidById,
     editWizkidById: editWizkidById,
     setEmployementWizkidById: setEmployementWizkidById,
+
     filteredWizkids: filteredWizkids,
-    searchWizkids: searchWizkids
+    searchWizkids: searchWizkids,
+    fetchedPositions: fetchedPositions,
+
+    setFilteredPosition: setFilteredPosition,
+
+    filteredPosition: filteredPosition,
   };
 
   return <WizkidsContext.Provider value={valueToShare}>
