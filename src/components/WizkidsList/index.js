@@ -1,27 +1,36 @@
 import './WizkidsList.css';
 import WizkidsElement from '../WizkidsElement';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import WizkidsContext from "../../context/wizkidsContext";
 import { Link } from 'react-router-dom';
 import { SyncLoader } from 'react-spinners';
 import LoadingContainer from '../LoadingContainer';
+import NoContentFound from '../NoContentFound';
 
 function WizkidsList() {
 
-  const {wizkids, loading, error} = useContext(WizkidsContext);
+  const {wizkids, filteredWizkids , loading, error} = useContext(WizkidsContext);
+  let wizkidsToShow = [];
 
-  const renderedWizkids = wizkids.map((wizkid) => {
+  if(loading) {
+    return <LoadingContainer />
+  }
+
+  if(filteredWizkids.length > 0) {
+    wizkidsToShow = filteredWizkids;
+  }
+  //just so it won't show nothing found for a split of a second until load is changing in context to fetch data from api
+  else if(wizkids.length > 0) {
+    return <NoContentFound noContentMessage={"No wizkid found :("}/>
+  }
+
+  const renderedWizkids = wizkidsToShow.map((wizkid) => {
     return (
       <div className='center-wizkids-grid' key={wizkid.id}>
         <WizkidsElement wizkid={wizkid}/>
       </div>
     )
   });
-
-
-  if(loading) {
-    return <LoadingContainer />
-  }
 
   if(error != "") {
     return (

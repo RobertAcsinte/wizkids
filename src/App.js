@@ -10,7 +10,6 @@ import WizkidEdit from "./pages/WizkidEdit";
 import Login from "./pages/Login";
 import { useState } from "react";
 
-
 function App() {
 
   const {fetchWizkids} = useContext(WizkidsContext);

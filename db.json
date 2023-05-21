@@ -9,8 +9,20 @@
     {
       "name": "fsdfsgffffffapula",
       "position": "CEO",
-      "employed": false,
+      "employed": true,
       "id": 14
+    },
+    {
+      "name": "Sevan Giotto",
+      "position": "Developer",
+      "employed": true,
+      "id": 15
+    },
+    {
+      "name": "fsdfsgffffffapula",
+      "position": "CEO",
+      "employed": false,
+      "id": 19
     }
   ],
   "auth": {
