@@ -11,9 +11,9 @@ function FilterDropdown() {
 
   const renderedPositions = fetchedPositions.map((position) => {
     return (
-      <div key={position}>
-        <div onClick={() => changeSelectedPosition(position)}>{position}</div>
-      </div>
+        <div key={position} onClick={() => changeSelectedPosition(position)} className="position-element">
+          {position}
+        </div>
     )
   });
 

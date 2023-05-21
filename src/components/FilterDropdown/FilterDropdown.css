@@ -14,7 +14,7 @@
   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
   height: 100%;
-  
+  cursor: pointer;
 }
 
 .dropdown-content {
@@ -25,17 +25,16 @@
   z-index: 999;
   background-color: white;
   border-radius: 20px;
+}
+
+.position-element {
   padding: 20px 20px;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
-.dropdown-content a {
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
+.position-element:hover {
+  background-color: rgba(235, 235, 235, 1);;
 }
 
 .dropdown:hover .dropdown-content {
