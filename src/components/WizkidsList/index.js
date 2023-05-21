@@ -5,6 +5,7 @@ import WizkidsContext from "../../context/wizkidsContext";
 import { Link } from 'react-router-dom';
 import { SyncLoader } from 'react-spinners';
 import LoadingContainer from '../LoadingContainer';
+import NoContentFound from '../NoContentFound';
 
 function WizkidsList() {
 
@@ -20,7 +21,7 @@ function WizkidsList() {
   }
   //just so it won't show nothing found for a split of a second until load is changing in context to fetch data from api
   else if(wizkids.length > 0) {
-    return <div>Nothing found</div>
+    return <NoContentFound noContentMessage={"No wizkid found :("}/>
   }
 
   const renderedWizkids = wizkidsToShow.map((wizkid) => {
