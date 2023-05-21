@@ -10,8 +10,10 @@ function Home() {
   return (
     <div>
       <Navbar />
-      <Searchbar />
-      <FilterDropdown />
+      <div className="searchbar-container">
+        <div className="search"><Searchbar placeholder="Search by name..." /></div>
+        <div className="filter-search"><FilterDropdown /></div>
+      </div>    
       <WizkidsList />
     </div>
   );

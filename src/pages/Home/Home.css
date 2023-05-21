@@ -1,2 +1,26 @@
+.searchbar-container{
+  /* margin: auto; */
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search {
+ width: 600px;
+}
+
+.filter-search {
+  /* margin-left: 45px; */
+}
+
+
+@media only screen and (max-width: 400px) {
+  .searchbar-container {
+    margin-top: 90px;
+  }
+}
+
+
 
 
