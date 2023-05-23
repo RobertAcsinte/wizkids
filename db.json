@@ -7,15 +7,15 @@
       "id": 1
     },
     {
-      "name": "fsdfsgffffffapula",
+      "name": "fsdfsgffffffapu",
       "position": "CEO",
-      "employed": false,
+      "employed": true,
       "id": 14
     },
     {
       "name": "Sevan Giottoyy",
       "position": "Developer",
-      "employed": true,
+      "employed": false,
       "id": 15
     }
   ],

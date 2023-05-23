@@ -1,0 +1,71 @@
+.box {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.row.content {
+  flex: 1;
+  margin-top: 127.5px; 
+  display: flex;
+  flex-direction: column;
+}
+
+.container{
+  margin: 60px 15px -10px 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 50%;
+}
+
+.button-edit {
+  border: none;
+  padding: 12px 24px;
+  background-color: var(--owow-green);
+  border-radius: 15px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+  margin-bottom: 24px;
+  margin-top: 24px;
+  font-weight: 900;
+}
+
+.button-edit:hover {
+  cursor: pointer;
+  background-color: var(--owow-green-hover);
+}
+
+.button-set-employement {
+  border: none;
+  padding: 12px 24px;
+  background-color: var(--owow-green);
+  font-weight: 900;
+  border-radius: 15px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+.button-set-employement:hover {
+  cursor: pointer;
+  background-color: var(--owow-green-hover);
+}
+
+@media only screen and (max-width: 750px) {
+  .form {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .row.content {
+    margin-top: 150px;
+  }
+}

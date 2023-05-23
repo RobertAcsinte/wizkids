@@ -1,9 +1,8 @@
 import { useParams } from "react-router";
 import Navbar from "../../components/Navbar";
-import "./WizkidEdit.css"
+import style from "./WizkidEdit.module.css"
 import { useContext, useEffect, useState } from 'react';
 import WizkidsContext from "../../context/wizkidsContext";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import WizkidElementContainer from "../../components/WizkidElementContainer";
 import InputLabel from "../../components/InputLabel";
@@ -52,37 +51,41 @@ useEffect(() => {
   } 
 }, [found]);
 
-if(loading) {
-  return (
-    <CenterContainer>
-      <SyncLoader color="var(--owow-green)" size="80px"/>
-    </CenterContainer>
-  );
-}
 
 const employmentButtonText = employed ? "Fire!" : "Hire back!";
 
   return (
-    <div>
+    <div className={style.box}>
       <Navbar />
-      {found !== undefined && (
-        <WizkidElementContainer>
-          <form className="wizkid-edit-form" onSubmit={handleSubmitEditName}>
-              <InputLabel labelName = "Name" value={name} onChange={handleChange} />
-              <button className="wizkid-edit-button-edit">
-                  Save
+      <div className={`${style.row} ${style.content}`}>
+
+        {found !== undefined && (
+          <WizkidElementContainer>
+            <form className={style.form} onSubmit={handleSubmitEditName}>
+                <InputLabel labelName = "Name" value={name} onChange={handleChange} />
+                <button className={style["button-edit"]}>
+                    Save
+                </button>
+                {error && <p style={{color: "red", fontWeight: "bold"}}>{error}</p>}
+            </form>
+            {token && (
+              <button className={style["button-set-employement"]} onClick={handleSubmitChangeEmployement}>
+                {employmentButtonText}
               </button>
-              {error && <p style={{color: "red", fontWeight: "bold"}}>{error}</p>}
-          </form>
-          {token && (
-            <button className="wizkid-edit-button-set-employement" onClick={handleSubmitChangeEmployement}>
-              {employmentButtonText}
-            </button>
-          )}
-        </WizkidElementContainer>
-      )}
+            )}
+          </WizkidElementContainer>
+        )}
+
+        {loading && 
+          <CenterContainer>
+            <SyncLoader color="var(--owow-green)" size="80px"/>
+          </CenterContainer>
+        }
+      </div>
     </div>
   );
+
+
 }
 
 export default WizkidEditPage;
