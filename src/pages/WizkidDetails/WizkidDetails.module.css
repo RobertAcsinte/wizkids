@@ -1,0 +1,59 @@
+.box {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.row.content {
+  flex: 1;
+  margin-top: 127.5px; 
+  display: flex;
+  flex-direction: column;
+}
+
+.container{
+  margin: 60px 15px -10px 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.position {
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+.phone-email {
+  font-weight: 300;
+  font-size: 16px;
+  margin-top: 0px;
+  margin-bottom: 6px;
+}
+
+.button-edit {
+  border: none;
+  padding: 12px 24px;
+  background-color: var(--owow-green);
+  border-radius: 15px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+  margin-bottom: 24px;
+  margin-top: 24px;
+  font-weight: 900;
+}
+
+.button-edit:hover {
+  cursor: pointer;
+  background-color: var(--owow-green-hover);
+}
+
+@media only screen and (max-width: 400px) {
+  .row.content {
+    margin-top: 150px;
+  }
+}

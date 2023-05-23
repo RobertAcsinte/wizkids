@@ -18,7 +18,6 @@ function HomePage() {
         <WizkidsList />
       </div>
     </div>
-
   );
 }
 

@@ -4,11 +4,10 @@ import HomePage from "./pages/Home/HomePage";
 import WizkidsContext from "./context/wizkidsContext";
 import AuthContext from "./context/authContext";
 import { Routes, Route } from 'react-router-dom';
-import WizkidDetails from "./pages/WizkidDetails";
+import WizkidDetailsPage from "./pages/WizkidDetails/WizkidDetailsPage";
 import WizkidEdit from "./pages/WizkidEdit";
 import Login from "./pages/Login";
-import { useState } from "react";
-import styles from "./App.module.css"
+
 
 function App() {
 
@@ -23,7 +22,7 @@ function App() {
   return (
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/details/:id" element={<WizkidDetails />} />
+        <Route path="/details/:id" element={<WizkidDetailsPage />} />
         <Route path="/edit/:id" element={isLoggedIn ? <WizkidEdit /> : <Login />} />
         <Route path="/login" element={<Login />} />
       </Routes>
