@@ -1,6 +1,6 @@
 .container {
   display: inline-block;
-  height: 100%;
+
   width: 150px;
   margin-left: 10px;
 }
@@ -42,6 +42,11 @@
 .container:hover .dropdown-content-container {
   display: block;
 }
+
+.dropdown-button :hover .dropdown-content-container {
+  display: block;
+}
+
 
 .container:hover .dropdown-button  {
   background-color: var(--owow-green-hover);
