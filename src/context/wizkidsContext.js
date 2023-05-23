@@ -83,6 +83,8 @@ const editWizkidById = async (id, newName) => {
           name: newName,
           position: wizkid.position,
           employed: wizkid.employed,
+          phone: wizkid.phone,
+          email: wizkid.email,
       });
           return { ...wizkid, ...response.data};
       }
@@ -102,6 +104,8 @@ const setEmployementWizkidById = async (id) => {
           name: wizkid.name,
           position: wizkid.position,
           employed: !(wizkid.employed),
+          phone: wizkid.phone,
+          email: wizkid.email
       });
           return { ...wizkid, ...response.data};
       }

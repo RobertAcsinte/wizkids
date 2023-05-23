@@ -1,22 +1,114 @@
 {
   "wizkids": [
     {
-      "name": "Sevan Giottyyyyrrrrbvbvb",
+      "name": "Wīgaberhtaz Giottop",
+      "position": "CEO",
+      "employed": true,
+      "phone": "06 925 425 245",
+      "email": "robert@owow.io",
+      "id": 0
+    },
+    {
+      "name": "Mahesh Zaman",
       "position": "Developer",
       "employed": true,
+      "phone": "06 925 425 245",
+      "email": "robert@owow.io",
       "id": 1
     },
     {
-      "name": "fsdfsgffffffapusss",
+      "id": 2,
+      "name": "Pythios Ramesh",
+      "position": "Designer",
+      "employed": 0,
+      "phone": "06 925 425 245",
+      "email": "robert@owow.io"
+    },
+    {
+      "id": 4,
+      "name": "Kire Idris",
       "position": "CEO",
+      "employed": 1,
+      "phone": "06 925 425 245",
+      "email": "robert@owow.io"
+    },
+    {
+      "id": 5,
+      "name": "Laurits Rəşad",
+      "position": "Developer",
+      "employed": 1,
+      "phone": "06 925 425 245",
+      "email": "robert@owow.io"
+    },
+    {
+      "id": 7,
+      "name": "Mihangel Sarava",
+      "position": "Intern",
+      "employed": 0,
+      "phone": "06 925 425 245",
+      "email": "robert@owow.io"
+    },
+    {
+      "id": 8,
+      "name": "Oluwaseyi Jakov",
+      "position": "CEO",
+      "employed": 1,
+      "phone": "06 925 425 245",
+      "email": "robert@owow.io"
+    },
+    {
+      "id": 9,
+      "name": "Conláed Vazgen",
+      "position": "Developer",
+      "employed": 1
+    },
+    {
+      "id": 10,
+      "name": "Scris Aici",
+      "position": "Designer",
+      "employed": 0,
+      "phone": "06 925 425 245",
+      "email": "robert@owow.io"
+    },
+    {
+      "id": 11,
+      "name": "Sevan Giotto",
+      "position": "Intern",
+      "employed": 0,
+      "phone": "06 925 425 245",
+      "email": "robert@owow.io"
+    },
+    {
+      "id": 12,
+      "name": "Tesfaye Juan José",
+      "position": "CEO",
+      "employed": 1,
+      "phone": "06 925 425 245",
+      "email": "robert@owow.io"
+    },
+    {
+      "id": 13,
+      "name": "Avitus Ramesh",
+      "position": "Developer",
+      "employed": 1,
+      "phone": "06 925 425 245",
+      "email": "robert@owow.io"
+    },
+    {
+      "name": "Toros Abd al-Rahp",
+      "position": "Designer",
       "employed": true,
+      "phone": "06 925 425 245",
+      "email": "robert@owow.io",
       "id": 14
     },
     {
-      "name": "Sevan Giottoyyyyy",
-      "position": "Developer",
-      "employed": false,
-      "id": 15
+      "id": 15,
+      "name": "Jagadish Qinnuajuaq",
+      "position": "Intern",
+      "employed": 0,
+      "phone": "06 925 425 245",
+      "email": "robert@owow.io"
     }
   ],
   "auth": {
