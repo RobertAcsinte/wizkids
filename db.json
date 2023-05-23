@@ -4,16 +4,20 @@
       "name": "Sevan Giott",
       "position": "Developer",
       "employed": true,
+      "email": "plm@plm.com",
+      "phone": "06743253",
       "id": 1
     },
     {
       "name": "fsdfsgffffffapu",
       "position": "CEO",
       "employed": true,
+      "email": "plm@plm.com",
+      "phone": "06743253",
       "id": 14
     },
     {
-      "name": "Sevan Giottoyy",
+      "name": "Sevan Giottoyyyyy",
       "position": "Developer",
       "employed": false,
       "id": 15

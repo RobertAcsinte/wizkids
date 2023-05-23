@@ -1,5 +1,18 @@
 @import '../../colors.css';
 
+.box {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.row.content {
+  flex: 1;
+  margin-top: 127.5px; 
+  display: flex;
+  flex-direction: column;
+}
+
 .center-cont {
   display: flex;
   flex-direction: column;
@@ -33,7 +46,6 @@
 .form-login {
   display: flex;
   flex-direction: column;
-  
 }
 
 .submit-login {
@@ -42,6 +54,12 @@
   padding: 15px 0px;
   background-color: var(--owow-green);
   border-radius: 15px;
+  font-weight: 900;
+}
+
+.submit-login:hover {
+  cursor: pointer;
+  background-color: var(--owow-green-hover);
 }
 
 @media only screen and (max-width: 400px) {

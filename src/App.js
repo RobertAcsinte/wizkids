@@ -6,7 +6,7 @@ import AuthContext from "./context/authContext";
 import { Routes, Route } from 'react-router-dom';
 import WizkidDetailsPage from "./pages/WizkidDetails/WizkidDetailsPage";
 import WizkidEditPage from "./pages/WizkidEdit/WizkidEditPage";
-import Login from "./pages/Login";
+import LoginPage from "./pages/Login/LoginPage";
 
 
 function App() {
@@ -23,8 +23,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/details/:id" element={<WizkidDetailsPage />} />
-        <Route path="/edit/:id" element={isLoggedIn ? <WizkidEditPage /> : <Login />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/edit/:id" element={isLoggedIn ? <WizkidEditPage /> : <LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
   );
 }
