@@ -21,7 +21,7 @@ function WizkidsList() {
   if(error != null) {
     return (
       <CenterContainer>
-        {error}
+        <div style={{color: "red", fontWeight: "700", fontSize: "32px"}}>{error}</div>
       </CenterContainer>
     );
   }
@@ -29,7 +29,7 @@ function WizkidsList() {
   if(filteredWizkids.length <= 0) {
     return (
       <CenterContainer>
-        No wizkid found :(
+        <div style={{color: "gray", fontWeight: "700", fontSize: "42px"}}>No wizkid found :(</div>
       </CenterContainer>
     );
   }
