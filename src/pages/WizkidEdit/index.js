@@ -6,9 +6,10 @@ import WizkidsContext from "../../context/wizkidsContext";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import WizkidElementContainer from "../../components/WizkidElementContainer";
-import LoadingContainer from "../../components/LoadingContainer";
 import InputLabel from "../../components/InputLabel";
 import AuthContext from "../../context/authContext";
+import CenterContainer from "../../components/CenterContainer/CenterContainer";
+import { SyncLoader } from "react-spinners";
 
 
 function WizkidEdit() {
@@ -52,7 +53,11 @@ useEffect(() => {
 }, [found]);
 
 if(loading) {
-  return <LoadingContainer />
+  return (
+    <CenterContainer>
+      <SyncLoader color="var(--owow-green)" size="80px"/>
+    </CenterContainer>
+  );
 }
 
 const employmentButtonText = employed ? "Fire!" : "Hire back!";

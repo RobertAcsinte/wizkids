@@ -1,14 +1,14 @@
 import React from "react";
 import {useEffect, useContext} from "react";
-import Home from "./pages/Home";
+import HomePage from "./pages/Home/HomePage";
 import WizkidsContext from "./context/wizkidsContext";
 import AuthContext from "./context/authContext";
-import "./App.css"
 import { Routes, Route } from 'react-router-dom';
 import WizkidDetails from "./pages/WizkidDetails";
 import WizkidEdit from "./pages/WizkidEdit";
 import Login from "./pages/Login";
 import { useState } from "react";
+import styles from "./App.module.css"
 
 function App() {
 
@@ -21,14 +21,12 @@ function App() {
 
 
   return (
-    <div>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/details/:id" element={<WizkidDetails />} />
         <Route path="/edit/:id" element={isLoggedIn ? <WizkidEdit /> : <Login />} />
         <Route path="/login" element={<Login />} />
       </Routes>
-    </div>
   );
 }
 

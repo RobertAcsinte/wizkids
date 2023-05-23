@@ -5,15 +5,19 @@ import { useContext, useState } from 'react';
 import WizkidsContext from "../../context/wizkidsContext";
 import { Link } from "react-router-dom";
 import WizkidElementContainer from "../../components/WizkidElementContainer";
-import LoadingContainer from "../../components/LoadingContainer";
-
+import CenterContainer from "../../components/CenterContainer/CenterContainer";
+import { SyncLoader } from "react-spinners";
 
 function WizkidDetails() {
   const { id } = useParams(); //get the id from url
   const {wizkids, loading, token} = useContext(WizkidsContext);
   
   if(loading) {
-    return <LoadingContainer />
+    return (
+      <CenterContainer>
+        <SyncLoader color="var(--owow-green)" size="80px"/>
+      </CenterContainer>
+    );
   }
 
   const found = wizkids.find(element => element.id === Number(id));

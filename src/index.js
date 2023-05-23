@@ -12,7 +12,6 @@ const root = ReactDOM.createRoot(el);
 
 
 root.render(
-
   <BrowserRouter>
     <ProviderContextAuth>
       <Provider>
@@ -20,5 +19,4 @@ root.render(
       </Provider> 
     </ProviderContextAuth>
   </BrowserRouter>
-
 );

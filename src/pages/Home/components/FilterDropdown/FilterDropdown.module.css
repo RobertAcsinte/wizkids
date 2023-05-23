@@ -1,11 +1,11 @@
-.dropdown {
+.container {
   display: inline-block;
   height: 100%;
   width: 150px;
   margin-left: 10px;
 }
 
-.dropbtn {
+.dropdown-button {
   width: 100%;
   background-color: var(--owow-green);
   color: black;
@@ -19,7 +19,7 @@
   cursor: pointer;
 }
 
-.dropdown-content {
+.dropdown-content-container {
   display: none;
   position: absolute;
   min-width: 160px;
@@ -29,31 +29,30 @@
   border-radius: 20px;
 }
 
-.position-element {
+.dropdown-content-list {
   padding: 20px 20px;
   border-radius: 20px;
   cursor: pointer;
 }
 
-.position-element:hover {
+.dropdown-content-list:hover {
   background-color: rgba(235, 235, 235, 1);;
 }
 
-.dropdown:hover .dropdown-content {
+.container:hover .dropdown-content-container {
   display: block;
 }
 
-.dropdown:hover .dropbtn {
+.container:hover .dropdown-button  {
   background-color: var(--owow-green-hover);
 }
 
 @media only screen and (max-width: 970px) {
-
-  .dropdown {
+  .container {
     position: relative;
   }
 
-  .dropdown-content {
+  .dropdown-content-container {
     position: absolute;
     right: 0px
   }

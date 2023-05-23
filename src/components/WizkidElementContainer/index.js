@@ -5,7 +5,7 @@ function WizKidElementContainer({children}) {
     <div className="wizkid-element-container-center">
       <div className="wizkid-element-container-info">
         <div className="wizkid-element-avatar-container-info">
-          <img className="wizkid-element-avatar-info" src={require('../../images/person.jpg')}/>
+          <img className="wizkid-element-avatar-info" src={require('../../assets/images/person.jpg')}/>
         </div>
           {children}
       </div>

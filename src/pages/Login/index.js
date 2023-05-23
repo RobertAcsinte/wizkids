@@ -2,10 +2,9 @@ import './Login.css';
 import { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../context/authContext';
 import { useNavigate } from 'react-router';
-import LoadingContainer from '../../components/LoadingContainer';
-import ErrorContainer from '../../components/ErrorContainer';
-import Navbar from '../../components/Navbar';
 import InputLabel from '../../components/InputLabel';
+import CenterContainer from '../../components/CenterContainer/CenterContainer';
+import { SyncLoader } from 'react-spinners';
 
 
 export default function Login() {
@@ -28,7 +27,11 @@ export default function Login() {
   }
 
   if(loading) {
-    return <LoadingContainer />
+    return (
+      <CenterContainer>
+        <SyncLoader color="var(--owow-green)" size="80px"/>
+      </CenterContainer>
+    );
   }
 
   return(
