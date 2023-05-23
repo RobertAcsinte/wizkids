@@ -12,7 +12,7 @@ import CenterContainer from "../../components/CenterContainer/CenterContainer";
 import { SyncLoader } from "react-spinners";
 
 
-function WizkidEdit() {
+function WizkidEditPage() {
   const { id } = useParams(); //get the id from url
   const {wizkids, loading, editWizkidById, setEmployementWizkidById} = useContext(WizkidsContext);
   const {token} = useContext(AuthContext);
@@ -85,4 +85,4 @@ const employmentButtonText = employed ? "Fire!" : "Hire back!";
   );
 }
 
-export default WizkidEdit;
+export default WizkidEditPage;

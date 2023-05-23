@@ -16,6 +16,9 @@ function Provider({children}) {
   const [filteredWizkids, setFilteredWizkids] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
+  useEffect(() => {
+    setFilteredWizkids(wizkids);
+  }, [wizkids])
 
   useEffect(() => {
     searchWizkids(searchQuery);

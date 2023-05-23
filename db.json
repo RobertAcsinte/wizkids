@@ -1,36 +1,22 @@
 {
   "wizkids": [
     {
-      "name": "Sevan Giottooy",
+      "name": "Sevan Giott",
       "position": "Developer",
       "employed": true,
-      "email": "plm@plm.com",
-      "phone": "0634543543",
       "id": 1
     },
     {
       "name": "fsdfsgffffffapula",
       "position": "CEO",
-      "employed": true,
-      "email": "plm@plm.com",
-      "phone": "0634543543",
+      "employed": false,
       "id": 14
     },
     {
-      "name": "Sevan Giotto",
+      "name": "Sevan Giottoyy",
       "position": "Developer",
       "employed": true,
-      "email": "plm@plm.com",
-      "phone": "0634543543",
       "id": 15
-    },
-    {
-      "name": "fsdfsgffffffapula",
-      "position": "CEO",
-      "employed": false,
-      "email": "plm@plm.com",
-      "phone": "0634543543",
-      "id": 19
     }
   ],
   "auth": {
