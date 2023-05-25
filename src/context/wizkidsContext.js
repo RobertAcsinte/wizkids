@@ -11,7 +11,6 @@ function Provider({children}) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
 
-  const [fetchedPositions, setFetchPositions] = useState([]); //show the available positions for the dropdown fiter
   const [filteredPosition, setFilteredPosition] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -21,25 +20,25 @@ function Provider({children}) {
     } else {
       return wizkids.filter((item) =>item.name.toLowerCase().includes(searchQuery.toLowerCase()))
     }
-  })
+  }, [wizkids, searchQuery, filteredPosition])
+
+  let fetchedPositions = useMemo(() => {
+    let tempArray = ["All"];
+    wizkids.forEach(wizkid => {
+      if(!(tempArray.includes(wizkid.position))) {
+        tempArray.push(wizkid.position)
+      }
+    })
+    return tempArray
+  }, [wizkids])
 
   //delay to simulate real api call
   const fetchWizkids = () => {
-    setFetchPositions([]);
     setLoading(true);
     setTimeout(async () => {
       try {
         const response = await axios.get("http://localhost:3001/wizkids");
         setWizkids(response.data);
-        // setFilteredWizkids(response.data)
-        //get positions
-        let tempArray = ["All"];
-        response.data.forEach(element => {
-          if(!(tempArray.includes(element.position))) {
-            tempArray.push(element.position)
-          }
-        });
-        setFetchPositions(tempArray);
         setError(null);
       } catch(error) {
         setError(error.message);
