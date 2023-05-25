@@ -28,7 +28,6 @@ function ProviderContextAuth({children}) {
     token ? setIsLoggedIn(true) : setIsLoggedIn(false);
   }, [token]);
 
-
   //delay to simulate real api call
   const login = async () => {
     setLoading(true);

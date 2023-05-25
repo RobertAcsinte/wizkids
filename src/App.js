@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import {useEffect, useContext} from "react";
 import HomePage from "./pages/Home/HomePage";
 import WizkidsContext from "./context/wizkidsContext";

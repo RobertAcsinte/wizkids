@@ -1,4 +1,4 @@
-import { createContext, useState, useCallback, useEffect } from "react";
+import { createContext, useState, useCallback, useEffect, useMemo } from "react";
 import axios from "axios";
 
 
@@ -13,33 +13,15 @@ function Provider({children}) {
 
   const [fetchedPositions, setFetchPositions] = useState([]); //show the available positions for the dropdown fiter
   const [filteredPosition, setFilteredPosition] = useState("All");
-  const [filteredWizkids, setFilteredWizkids] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
-  useEffect(() => {
-    setFilteredWizkids(wizkids);
-  }, [wizkids])
-
-  useEffect(() => {
-    searchWizkids(searchQuery);
-  }, [filteredPosition])
-
-  useEffect(() => {
-    searchWizkids(searchQuery);
-  }, [searchQuery])
-
-
-  const searchWizkids = () => {
-    if(filteredPosition === "All") {
-      setFilteredWizkids(wizkids.filter((item) =>
-      item.name.toLowerCase().includes(searchQuery.toLowerCase())
-    ));
-    } else{
-      setFilteredWizkids(wizkids.filter((item) =>
-      item.name.toLowerCase().includes(searchQuery.toLowerCase()) && item.position.toLowerCase().includes(filteredPosition.toLowerCase())
-    ));
+  let filteredWizkids = useMemo(() => {
+    if(filteredPosition !== "All") {
+      return wizkids.filter((item) => item.name.toLowerCase().includes(searchQuery.toLowerCase()) && item.position.toLowerCase().includes(filteredPosition.toLowerCase()))
+    } else {
+      return wizkids.filter((item) =>item.name.toLowerCase().includes(searchQuery.toLowerCase()))
     }
-  }
+  })
 
   //delay to simulate real api call
   const fetchWizkids = () => {
@@ -49,7 +31,7 @@ function Provider({children}) {
       try {
         const response = await axios.get("http://localhost:3001/wizkids");
         setWizkids(response.data);
-        setFilteredWizkids(response.data)
+        // setFilteredWizkids(response.data)
         //get positions
         let tempArray = ["All"];
         response.data.forEach(element => {
@@ -126,7 +108,7 @@ const setEmployementWizkidById = async (id) => {
     editWizkidById: editWizkidById,
     setEmployementWizkidById: setEmployementWizkidById,
     filteredWizkids: filteredWizkids,
-    searchWizkids: searchWizkids,
+    // searchWizkids: searchWizkids,
     fetchedPositions: fetchedPositions,
     setFilteredPosition: setFilteredPosition,
     filteredPosition: filteredPosition,
