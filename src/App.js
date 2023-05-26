@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import {useEffect, useContext} from "react";
 import HomePage from "./pages/Home/HomePage";
-import WizkidsContext from "./context/wizkidsContext";
+import WizkidsContext, { ACTIONS } from "./context/wizkidsContext";
 import AuthContext from "./context/authContext";
 import { Routes, Route } from 'react-router-dom';
 import WizkidDetailsPage from "./pages/WizkidDetails/WizkidDetailsPage";
@@ -11,11 +11,12 @@ import LoginPage from "./pages/Login/LoginPage";
 
 function App() {
 
-  const {fetchWizkids} = useContext(WizkidsContext);
+  const {fetchWizkids, dispatch} = useContext(WizkidsContext);
   const {isLoggedIn} = useContext(AuthContext);
   
   useEffect(() => {
-    fetchWizkids();
+    // fetchWizkids();
+    dispatch({type: ACTIONS.FETCH_WIZKIDS})
   }, []);
 
 
