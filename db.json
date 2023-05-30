@@ -1,28 +1,12 @@
 {
   "wizkids": [
     {
-      "name": "Wīgaberhtaz Giottop",
-      "position": "CEO",
-      "employed": true,
-      "phone": "06 925 425 245",
-      "email": "robert@owow.io",
-      "id": 0
-    },
-    {
-      "name": "Mahesh Zaman",
+      "name": "Mahesh Zsssaab",
       "position": "Developer",
       "employed": true,
       "phone": "06 925 425 245",
       "email": "robert@owow.io",
       "id": 1
-    },
-    {
-      "id": 2,
-      "name": "Pythios Ramesh",
-      "position": "Designer",
-      "employed": 0,
-      "phone": "06 925 425 245",
-      "email": "robert@owow.io"
     },
     {
       "id": 4,

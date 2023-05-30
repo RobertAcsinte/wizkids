@@ -10,6 +10,7 @@ function WizkidsList() {
 
   const {filteredWizkids, loading, error} = useContext(WizkidsContext);
   
+  
   if(loading) {
     return (
       <CenterContainer>

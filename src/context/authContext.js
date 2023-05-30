@@ -4,6 +4,7 @@ import useToken from "../hooks/useToken";
 
 const AuthContext = createContext();
 
+
 function ProviderContextAuth({children}) {
 
   const {token, setToken, removeToken} = useToken();
@@ -11,18 +12,6 @@ function ProviderContextAuth({children}) {
   const [error, setError] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState();
 
-  // //delay to simulate real api call
-  // const login = async () => {
-  //   await new Promise((resolve) => setTimeout(resolve, 1000));
-  //   try {
-  //     const response = await axios.get("http://localhost:3001/auth/");
-  //     setToken(response.data);
-  //     return response;
-  //   } catch (error) {
-  //     console.log("error");
-  //     throw error;
-  //   }
-  // };
 
   useEffect(() => {
     token ? setIsLoggedIn(true) : setIsLoggedIn(false);
@@ -33,7 +22,7 @@ function ProviderContextAuth({children}) {
     setLoading(true);
     setTimeout(async () => {
       try {
-        const response = await axios.get("http://localhost:3001/auth");
+        const response = await axios.get("http://localhost:3001/authh");
         setToken(response.data);
         setError("");
       } catch(error) {

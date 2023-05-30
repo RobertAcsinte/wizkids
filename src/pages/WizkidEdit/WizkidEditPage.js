@@ -19,6 +19,8 @@ function WizkidEditPage() {
   const [employed, setEmployed] = useState();
   const [error, setError] = useState("");
   let navigate = useNavigate();
+
+  console.log(loading)
     
   const handleChange = (event) => {
     setName(event.target.value)
@@ -54,6 +56,18 @@ useEffect(() => {
 
 const employmentButtonText = employed ? "Fire!" : "Hire back!";
 
+if(loading) {
+  return (
+    <div className={style.box}>
+      <div className={`${style.row} ${style.content}`}>
+        <CenterContainer>
+          <SyncLoader color="var(--owow-green)" size="80px"/>
+        </CenterContainer>
+      </div>
+    </div>
+  );
+}
+
   return (
     <div className={style.box}>
       <Navbar />
@@ -63,7 +77,7 @@ const employmentButtonText = employed ? "Fire!" : "Hire back!";
           <WizkidElementContainer>
             <form className={style.form} onSubmit={handleSubmitEditName}>
                 <InputLabel labelName = "Name" value={name} onChange={handleChange} />
-                <button className={style["button-edit"]}>
+                <button type="submit" className={style["button-edit"]}>
                     Save
                 </button>
                 {error && <p style={{color: "red", fontWeight: "bold"}}>{error}</p>}
@@ -75,12 +89,6 @@ const employmentButtonText = employed ? "Fire!" : "Hire back!";
             )}
           </WizkidElementContainer>
         )}
-
-        {loading && 
-          <CenterContainer>
-            <SyncLoader color="var(--owow-green)" size="80px"/>
-          </CenterContainer>
-        }
       </div>
     </div>
   );

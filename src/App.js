@@ -11,14 +11,7 @@ import LoginPage from "./pages/Login/LoginPage";
 
 function App() {
 
-  const {fetchWizkids, dispatch} = useContext(WizkidsContext);
   const {isLoggedIn} = useContext(AuthContext);
-  
-  useEffect(() => {
-    // fetchWizkids();
-    dispatch({type: ACTIONS.FETCH_WIZKIDS})
-  }, []);
-
 
   return (
       <Routes>

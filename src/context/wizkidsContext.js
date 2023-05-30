@@ -1,6 +1,5 @@
-import { createContext, useState, useCallback, useEffect, useMemo, useReducer } from "react";
+import { createContext, useState, useEffect, useMemo, useReducer } from "react";
 import axios from "axios";
-
 
 
 const WizkidsContext = createContext();
@@ -9,11 +8,6 @@ export const ACTIONS = {
   CALL_API: "call-api",
   SUCCESS_API: "success",
   ERROR_API: "error",
-
-  FETCH_WIZKIDS: "fetch-wizkids",
-  EDIT_WIZKID: "edit-wizkids",
-  DELETE_WIZKID: "delete-wizkid",
-  UPDATE_WIZKID: "update-wizkid"
 }
 
 const initialState = {
@@ -22,47 +16,47 @@ const initialState = {
   error: null
 }
 
+function reducer(state, action) {
+  switch(action.type) {
+    case ACTIONS.CALL_API: {
+      return {
+          ...state,
+          loading: true,
+      };
+  }
+    case ACTIONS.SUCCESS_API: {
+        return {
+            ...state,
+            loading: false,
+            wizkids: action.payload,
+            error: null
+        };
+    }
+    case ACTIONS.ERROR_API: {
+        return {
+            ...state,
+            loading: false,
+            error: action.error,
+        };
+    }
+    default:
+      return state
+  }
+}
+
 function Provider({children}) {
   
   const [filteredPosition, setFilteredPosition] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
-
   const [state, dispatch] = useReducer(reducer, initialState)
+  const [_state, _dispatch]  = useReducer(() => {}, {})
+
   const {wizkids, loading, error} = state
 
   useEffect(() => {
     fetchWizkids()
   }, [])
-
-  function reducer(state, action) {
-    switch(action.type) {
-      case ACTIONS.CALL_API: {
-        return {
-            ...state,
-            loading: true,
-        };
-    }
-      case ACTIONS.SUCCESS_API: {
-          return {
-              ...state,
-              loading: false,
-              wizkids: action.payload,
-          };
-      }
-      case ACTIONS.ERROR_API: {
-          return {
-              ...state,
-              loading: false,
-              error: action.error,
-          };
-      }
-
-      default:
-        return state
-    }
-  }
-
 
   let filteredWizkids = useMemo(() => {
     if(filteredPosition !== "All") {
@@ -85,9 +79,9 @@ function Provider({children}) {
   //delay to simulate real api call
   function fetchWizkids(){
     dispatch({ type: ACTIONS.CALL_API })
-    let response = setTimeout(async () => {
+    setTimeout(async () => {
       try {
-        response = await axios.get("http://localhost:3001/wizkids");
+        const response = await axios.get("http://localhost:3001/wizkids");
         dispatch({ type: ACTIONS.SUCCESS_API, payload: response.data });
       } catch(error) {
         dispatch({ type: ACTIONS.ERROR_API, error: error.message });
@@ -97,63 +91,75 @@ function Provider({children}) {
   };
 
   const deleteWizkidById = async (id) => {
-    await axios.delete(`http://localhost:3001/wizkids/${id}`)
-    const updatedWizkids = wizkids.filter((wizkid) => {
-        return wizkid.id !== id;
-    });
-    return updatedWizkids
-    // setWizkids(updatedWizkids);
+    dispatch({type: ACTIONS.CALL_API})
+    setTimeout(async () => {
+      try {
+        await axios.delete(`http://localhost:3001/wizkids/${id}`)
+        const updatedWizkids = wizkids.filter((wizkid) => {
+          return wizkid.id !== id;
+      });
+        dispatch({ type: ACTIONS.SUCCESS_API, payload: updatedWizkids});
+      } catch(error) {
+        dispatch({ type: ACTIONS.ERROR_API, error: error.message });
+      }
+    }, 1000)
 };
 
+//timeout just to simulate real api
 const editWizkidById = async (id, newName) => {
-  try {
-    const updatedWizkids = await Promise.all(wizkids.map(async (wizkid) => {
-      if(wizkid.id === Number(id)) {
-        const response = await axios.put(`http://localhost:3001/wizkids/${id}`, {
-          name: newName,
-          position: wizkid.position,
-          employed: wizkid.employed,
-          phone: wizkid.phone,
-          email: wizkid.email,
-      });
-          return { ...wizkid, ...response.data};
+  dispatch({ type: ACTIONS.CALL_API })
+  return new Promise((resolve, reject) => {
+    setTimeout(async () => {
+      try {
+        const updatedWizkids = await Promise.all(wizkids.map(async (wizkid) => {
+          if(wizkid.id === Number(id)) {
+            const response = await axios.put(`http://localhost:3001/wizkids/${id}`, {
+              ...wizkid, name: newName
+          });
+              return { ...wizkid, ...response.data};
+          }
+          return wizkid;
+      }));
+      resolve();
+      dispatch({ type: ACTIONS.SUCCESS_API, payload: updatedWizkids });
+      } catch(error) {
+          reject(error)
+          dispatch({ type: ACTIONS.ERROR_API, error: error.message });
       }
-      return wizkid;
-  }));
-  return updatedWizkids
-  // setWizkids(updatedWizkids);
-  } catch(error) {
-      throw error;
-  }
+    }, 1000)
+  })
 };
 
+//timeout just to simulate real api
 const setEmployementWizkidById = async (id) => {
-  try {
-    const updatedWizkids = await Promise.all(wizkids.map(async (wizkid) => {
-      if(wizkid.id === Number(id)) {
-        const response = await axios.put(`http://localhost:3001/wizkids/${id}`, {
-          name: wizkid.name,
-          position: wizkid.position,
-          employed: !(wizkid.employed),
-          phone: wizkid.phone,
-          email: wizkid.email
-      });
-          return { ...wizkid, ...response.data};
+  dispatch({type: ACTIONS.CALL_API})
+  return new Promise((resolve, reject) => {
+    setTimeout(async () => {
+      try {
+        const updatedWizkids = await Promise.all(wizkids.map(async (wizkid) => {
+          if(wizkid.id === Number(id)) {
+            const response = await axios.put(`http://localhost:3001/wizkidss/${id}`, {
+              ...wizkid, employed: !(wizkid.employed)
+          });
+              return { ...wizkid, ...response.data};
+          }
+          return wizkid;
+      }));
+      resolve();
+      dispatch({ type: ACTIONS.SUCCESS_API, payload: updatedWizkids });
+      } catch(error) {
+          reject(error)
+          dispatch({ type: ACTIONS.ERROR_API, error: error.message });
       }
-      return wizkid;
-  }));
-  return updatedWizkids;
-  // setWizkids(updatedWizkids);
-  } catch(error) {
-      throw error;
-  }
+    }, 1000)
+  })
 };
 
   const valueToShare = {
     error: error,
     loading: loading,
     wizkids: wizkids,
-    fetchWizkids: fetchWizkids,
+
     deleteWizkidById: deleteWizkidById,
     editWizkidById: editWizkidById,
     setEmployementWizkidById: setEmployementWizkidById,
